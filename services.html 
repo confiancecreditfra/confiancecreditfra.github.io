@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Services - Confiance Crédit</title>
+  <title>Confiance Crédit - Services</title>
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
   <header>
-    <img src="images/logo.png" alt="Logo" class="logo">
+    <img src="images/logo.png" alt="Logo Confiance Crédit" class="logo">
     <nav>
       <a href="index.html">Accueil</a>
       <a href="services.html" class="active">Services</a>
@@ -19,17 +19,19 @@
   </header>
 
   <main>
-    <h1>Nos Services</h1>
-    <h2>Prêt personnel</h2>
-    <p>Financer vos besoins personnels en toute simplicité.</p>
-    <h2>Prêt immobilier</h2>
-    <p>Réalisez vos projets immobiliers grâce à nos solutions adaptées.</p>
-    <h2>Prêt professionnel</h2>
-    <p>Accompagner la croissance et les ambitions de votre entreprise.</p>
+    <section>
+      <h1>Nos Services</h1>
+      <p>Confiance Crédit vous propose différents types de prêts adaptés à vos besoins :</p>
+      <ul>
+        <li><strong>Prêt personnel</strong> : financez vos projets personnels en toute sérénité.</li>
+        <li><strong>Prêt immobilier</strong> : concrétisez votre rêve de devenir propriétaire.</li>
+        <li><strong>Prêt professionnel</strong> : accompagnez la croissance de votre entreprise.</li>
+      </ul>
+    </section>
   </main>
 
   <footer>
-    <p>© 2019 - Confiance Crédit</p>
+    &copy; 2019 - 2025 Confiance Crédit | Paris, France | Email : confiancecredit.fr@gmail.com
   </footer>
 </body>
 </html>
