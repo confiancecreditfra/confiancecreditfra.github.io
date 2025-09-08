@@ -1,411 +1,456 @@
-confiance-credit/ ├── index.html ├── merci.html ├── confidentialite.html └── assets/ └── (images ou CSS séparé si nécessaire)
-
---- index.html ---
-
-<!DOCTYPE html><html lang="fr">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Confiance Crédit — Financement simple et rapide</title>
-  <meta name="description" content="Confiance Crédit : crédits personnel, professionnel et immobilier. Simulation, demande en ligne et accompagnement sur-mesure.">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  <style>
-    /* Colle ici tout ton CSS existant du index.html */
-  </style>
-</head>
-<body>
-  <!--<!DOCTYPE html><html lang="fr">
+<!doctype html>
+<html lang="fr">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Confiance Crédit — Financement simple et rapide</title>
-  <meta name="description" content="Confiance Crédit : crédits personnel, professionnel et immobilier. Simulation, demande en ligne et accompagnement sur-mesure." />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  <style>
-    :root{
-      --bg:#0b1020; /* bleu nuit profond */
-      --card:#111831;
-      --muted:#8aa0c6;
-      --brand:#2f6bff;
-      --brand-2:#00d1ff;
-      --ok:#10b981;
-      --warn:#f59e0b;
-      --danger:#ef4444;
-      --white:#ffffff;
-    }
-    *{box-sizing:border-box}
-    html,body{margin:0;padding:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,"Helvetica Neue",sans-serif;background:linear-gradient(180deg,#0b1020,#0d1430 60%,#0b1020);color:var(--white);}
-    a{color:inherit;text-decoration:none}
-    .container{width:min(1100px,92%);margin-inline:auto}
-    header{position:sticky;top:0;background:rgba(11,16,32,.8);backdrop-filter: blur(8px);border-bottom:1px solid rgba(255,255,255,.06);z-index:50}
-    .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
-    .logo{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.3px}
-    .logo-badge{width:36px;height:36px;border-radius:12px;background:linear-gradient(135deg,var(--brand),var(--brand-2));display:grid;place-items:center;box-shadow:0 8px 24px rgba(47,107,255,.3)}
-    .logo-badge svg{filter:drop-shadow(0 2px 8px rgba(0,0,0,.3))}
-    .menu{display:flex;gap:18px;align-items:center}
-    .menu a{opacity:.85;padding:10px 12px;border-radius:10px}
-    .menu a:hover{background:rgba(255,255,255,.06);opacity:1}
-    .cta{background:linear-gradient(135deg,var(--brand),var(--brand-2));padding:10px 16px;border-radius:12px;font-weight:600;box-shadow:0 8px 24px rgba(47,107,255,.35)}.hero{display:grid;grid-template-columns:1.2fr 1fr;gap:32px;align-items:center;padding:56px 0 32px}
-.badge{display:inline-flex;gap:8px;align-items:center;padding:6px 10px;border-radius:999px;background:rgba(47,107,255,.12);border:1px solid rgba(47,107,255,.35);font-size:12px;color:#b9cdfa}
-h1{font-size:40px;line-height:1.1;margin:14px 0 10px}
-.lead{color:var(--muted);font-size:16px;line-height:1.6}
-.hero-card{background:linear-gradient(180deg,rgba(255,255,255,.03),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.08);padding:18px;border-radius:18px}
-
-.grid{display:grid;gap:18px}
-.grid-3{grid-template-columns:repeat(3,1fr)}
-.grid-2{grid-template-columns:repeat(2,1fr)}
-.card{background:var(--card);border:1px solid rgba(255,255,255,.06);border-radius:16px;padding:18px}
-.card h3{margin:10px 0 6px}
-.muted{color:var(--muted)}
-
-section{padding:28px 0}
-h2{font-size:28px;letter-spacing:.2px;margin:0 0 8px}
-
-.pill{display:inline-flex;align-items:center;gap:8px;font-size:12px;background:rgba(255,255,255,.06);padding:6px 10px;border-radius:999px;color:#c9d3ee;border:1px solid rgba(255,255,255,.08)}
-
-.list{display:grid;gap:10px;margin:10px 0 0}
-.li{display:flex;gap:10px;align-items:flex-start}
-.li svg{flex:0 0 18px;margin-top:3px}
-
-.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 16px;border-radius:12px;border:1px solid rgba(255,255,255,.12);background:#121a36;font-weight:600}
-.btn:hover{transform:translateY(-1px)}
-.btn.primary{background:linear-gradient(135deg,var(--brand),var(--brand-2));border:none}
-
-.form{display:grid;gap:12px}
-.row{display:grid;gap:12px}
-.row-2{grid-template-columns:repeat(2,1fr)}
-label{font-size:13px;color:#c8d1ea}
-input,select,textarea{width:100%;padding:12px 14px;border-radius:12px;border:1px solid rgba(255,255,255,.12);background:#0f1530;color:var(--white)}
-input::placeholder,textarea::placeholder{color:#93a0c7}
-.hint{font-size:12px;color:#9fb0da}
-.legal{font-size:12px;color:#9fb0da}
-.success{color:var(--ok)}
-.error{color:var(--danger)}
-
-footer{border-top:1px solid rgba(255,255,255,.08);padding:24px 0;color:#b2bfe6}
-
-@media (max-width: 920px){
-  .hero{grid-template-columns:1fr}
-  .grid-3{grid-template-columns:1fr}
-  .grid-2{grid-template-columns:1fr}
-  .menu{display:none}
-}
-
-  </style>
+  <title>Confiance Crédit — Prêts personnels, immobiliers & professionnels</title>
+  <meta name="description" content="Confiance Crédit (Paris, France) — prêts personnels, immobiliers et professionnels depuis 2019. Demandez votre financement en ligne en quelques minutes." />
+  <link rel="preload" href="assets/logo.png" as="image">
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="assets/logo.png" />
 </head>
 <body>
-  <header>
-    <div class="container nav">
-      <a href="#accueil" class="logo" aria-label="Confiance Crédit">
-        <span class="logo-badge" aria-hidden="true">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M12 3l7.5 4.33v9.34L12 21l-7.5-4.33V7.33L12 3z" stroke="white" stroke-width="1.5"/>
-            <path d="M7 12l3 3 7-7" stroke="white" stroke-width="1.7" stroke-linecap="round"/>
-          </svg>
-        </span>
-        <span>Confiance Crédit</span>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#top">
+        <img src="assets/logo.png" alt="Logo Confiance Crédit" class="logo">
+        <div class="brand-text">
+          <span class="brand-name">CONFIANCE</span>
+          <span class="brand-name accent">CRÉDIT</span>
+        </div>
       </a>
-      <nav class="menu" aria-label="Navigation principale">
+      <nav class="nav">
         <a href="#services">Services</a>
-        <a href="#simulateur">Simulateur</a>
-        <a href="#demande">Demande en ligne</a>
+        <a href="#expertise">Expertise</a>
+        <a href="#demande">Demande de prêt</a>
         <a href="#contact">Contact</a>
-        <a class="cta" href="#demande">Faire une demande</a>
       </nav>
     </div>
-  </header>  <main id="accueil" class="container">
+  </header>
+
+  <main id="top">
+    <!-- HERO -->
     <section class="hero">
-      <div>
-        <span class="badge">Financement simple • Accompagnement rapide</span>
-        <h1>Bâtissez vos projets avec <span style="background:linear-gradient(135deg,var(--brand),var(--brand-2));-webkit-background-clip:text;background-clip:text;color:transparent">Confiance Crédit</span></h1>
-        <p class="lead">Crédit personnel, professionnel et immobilier. Des offres claires, des délais maîtrisés, un suivi humain à chaque étape.</p>
-        <div style="display:flex;gap:12px;margin-top:14px">
-          <a class="btn primary" href="#demande">Demarrer ma demande</a>
-          <a class="btn" href="#services">Voir nos services</a>
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <h1>Votre financement, en toute <span class="accent">confiance</span>.</h1>
+          <p class="lead">
+            Depuis 2019, Confiance Crédit accompagne particuliers et professionnels
+            avec des solutions sur-mesure : <strong>prêt personnel</strong>, <strong>immobilier</strong> et <strong>professionnel</strong>.
+          </p>
+          <div class="cta-row">
+            <a href="#demande" class="btn primary">Faire une demande</a>
+            <a href="#services" class="btn ghost">Découvrir nos services</a>
+          </div>
+          <ul class="bullets">
+            <li>Réponse sous 24 h</li>
+            <li>Processus 100 % en ligne</li>
+            <li>Paris, France — Depuis 2019</li>
+          </ul>
         </div>
-        <div class="list" style="margin-top:14px">
-          <div class="li">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 7L9 18l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <span class="muted">Étude gratuite et sans engagement</span>
+        <div class="hero-card">
+          <div class="stat">
+            <span class="stat-value">2019</span>
+            <span class="stat-label">Année de création</span>
           </div>
-          <div class="li">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 7L9 18l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <span class="muted">Réponse rapide sous 24–72h (indicatif)</span>
+          <div class="stat">
+            <span class="stat-value">3</span>
+            <span class="stat-label">Domaines d’expertise</span>
           </div>
-          <div class="li">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 7L9 18l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <span class="muted">Données sécurisées — confidentialité assurée</span>
-          </div>
-        </div>
-      </div>
-      <div class="hero-card">
-        <div class="pill">Aperçu rapide</div>
-        <div class="grid grid-2" style="margin-top:12px">
-          <div class="card">
-            <h3>Crédit personnel</h3>
-            <p class="muted">Financez vos besoins : études, santé, équipement, projets personnels.</p>
-          </div>
-          <div class="card">
-            <h3>Crédit professionnel</h3>
-            <p class="muted">Trésorerie, équipements, croissance : boostez votre activité.</p>
-          </div>
-          <div class="card">
-            <h3>Crédit immobilier</h3>
-            <p class="muted">Acquérir, construire ou rénover en toute sérénité.</p>
-          </div>
-          <div class="card">
-            <h3>Accompagnement</h3>
-            <p class="muted">Conseils, montage de dossier et suivi personnalisé.</p>
+          <div class="stat">
+            <span class="stat-value">24h</span>
+            <span class="stat-label">Délai de réponse</span>
           </div>
         </div>
       </div>
-    </section><section id="services">
-  <div class="pill">Nos services</div>
-  <h2>Des solutions claires et adaptées</h2>
-  <p class="muted">Choisissez l'offre qui correspond à votre besoin. Nous évaluons gratuitement votre capacité d'emprunt.</p>
-  <div class="grid grid-3" style="margin-top:14px">
-    <article class="card">
-      <h3>Crédit personnel</h3>
-      <p class="muted">Montant flexible, échéances adaptées. Idéal pour des projets du quotidien.</p>
-      <ul class="list">
-        <li class="li"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 7L9 18l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Étude en 24–72h</span></li>
-        <li class="li"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 7L9 18l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Taux compétitifs</span></li>
-      </ul>
-    </article>
-    <article class="card">
-      <h3>Crédit professionnel</h3>
-      <p class="muted">PME, indépendants, startups : financez votre croissance et vos investissements.</p>
-      <ul class="list">
-        <li class="li"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 7L9 18l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Solutions souples et rapides</span></li>
-        <li class="li"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 7L9 18l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Accompagnement dédié</span></li>
-      </ul>
-    </article>
-    <article class="card">
-      <h3>Crédit immobilier</h3>
-      <p class="muted">Accédez à la propriété, construisez ou rénovez avec un suivi complet.</p>
-      <ul class="list">
-        <li class="li"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 7L9 18l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Étude personnalisée</span></li>
-        <li class="li"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 7L9 18l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Montage de dossier complet</span></li>
-      </ul>
-    </article>
-  </div>
-</section>
+    </section>
 
-<section id="simulateur">
-  <div class="pill">Simulateur indicatif</div>
-  <h2>Estimez votre mensualité</h2>
-  <p class="hint">Simulation à titre informatif, sans valeur contractuelle.</p>
-  <div class="card" style="margin-top:12px">
-    <div class="row row-2">
-      <div>
-        <label for="montant">Montant demandé (FCFA / €)</label>
-        <input type="number" id="montant" placeholder="ex: 3 000 000" min="0" />
+    <!-- SERVICES -->
+    <section id="services" class="section">
+      <div class="container">
+        <h2>Nos services</h2>
+        <div class="cards">
+          <article class="card">
+            <h3>Prêt personnel</h3>
+            <p>Financez vos projets (études, véhicule, travaux, événements) avec des mensualités adaptées.</p>
+          </article>
+          <article class="card">
+            <h3>Prêt immobilier</h3>
+            <p>Achat, construction, investissement : nous optimisons votre financement immobilier.</p>
+          </article>
+          <article class="card">
+            <h3>Prêt professionnel</h3>
+            <p>Accompagne la croissance de votre activité : trésorerie, équipements, développement.</p>
+          </article>
+        </div>
       </div>
-      <div>
-        <label for="taux">Taux annuel (%)</label>
-        <input type="number" id="taux" placeholder="ex: 8" min="0" step="0.01" />
+    </section>
+
+    <!-- EXPERTISE -->
+    <section id="expertise" class="section alt">
+      <div class="container">
+        <h2>Notre expertise</h2>
+        <div class="grid-2">
+          <div>
+            <p>
+              Notre équipe basée à <strong>Paris (France)</strong> analyse chaque dossier pour proposer
+              des solutions de financement claires et compétitives, en toute transparence.
+            </p>
+            <ul class="checklist">
+              <li>Processus simple et sécurisé</li>
+              <li>Accompagnement personnalisé</li>
+              <li>Décision rapide</li>
+            </ul>
+          </div>
+          <div class="panel">
+            <h4>Coordonnées</h4>
+            <p><strong>Confiance Crédit</strong><br/>Paris, France</p>
+            <p><a href="mailto:confiancecredit.fr@gmail.com">confiancecredit.fr@gmail.com</a></p>
+            <p class="muted">Du lundi au vendredi — 9h-18h</p>
+          </div>
+        </div>
       </div>
-      <div>
-        <label for="duree">Durée (mois)</label>
-        <input type="number" id="duree" placeholder="ex: 36" min="1" />
+    </section>
+
+    <!-- FORMULAIRE -->
+    <section id="demande" class="section">
+      <div class="container">
+        <h2>Demande de prêt</h2>
+        <p class="muted">
+          Remplissez le formulaire ci-dessous. Une réponse vous sera adressée sous 24 h après
+          vérification d’éligibilité. Les champs marqués * sont obligatoires.
+        </p>
+
+        <!-- IMPORTANT : l'action envoie vers ton e-mail via FormSubmit (compatible GitHub Pages) -->
+        <form id="loanForm" class="form" action="https://formsubmit.co/confiancecredit.fr@gmail.com" method="POST" enctype="multipart/form-data" novalidate>
+          <!-- FormSubmit options -->
+          <input type="hidden" name="_subject" value="Nouvelle demande de prêt — Confiance Crédit">
+          <input type="hidden" name="_captcha" value="true">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_next" value="https://confiancecreditfr.github.io/thank-you.html">
+
+          <!-- Antispam honeypot -->
+          <input type="text" name="_honey" style="display:none">
+
+          <div class="grid">
+            <div class="field">
+              <label for="prenom">Prénom *</label>
+              <input id="prenom" name="Prénom" type="text" required autocomplete="given-name" />
+              <span class="error"></span>
+            </div>
+
+            <div class="field">
+              <label for="nom">Nom *</label>
+              <input id="nom" name="Nom" type="text" required autocomplete="family-name" />
+              <span class="error"></span>
+            </div>
+
+            <div class="field">
+              <label for="dob">Date de naissance *</label>
+              <input id="dob" name="Date de naissance" type="date" required />
+              <span class="error"></span>
+            </div>
+
+            <div class="field">
+              <label for="adresse">Adresse exacte de la résidence *</label>
+              <input id="adresse" name="Adresse de résidence" type="text" required autocomplete="street-address" />
+              <span class="error"></span>
+            </div>
+
+            <div class="field">
+              <label for="pays">Pays *</label>
+              <input id="pays" name="Pays" type="text" required autocomplete="country-name" />
+              <span class="error"></span>
+            </div>
+
+            <div class="field">
+              <label for="profession">Profession *</label>
+              <input id="profession" name="Profession" type="text" required />
+              <span class="error"></span>
+            </div>
+
+            <div class="field">
+              <label for="salaire">Salaire mensuel (EUR) *</label>
+              <input id="salaire" name="Salaire mensuel" type="number" min="0" step="0.01" required />
+              <span class="error"></span>
+            </div>
+
+            <div class="field">
+              <label for="email">E-mail *</label>
+              <input id="email" name="E-mail" type="email" required autocomplete="email" />
+              <span class="error"></span>
+            </div>
+
+            <div class="field">
+              <label for="montant">Montant du prêt souhaité (EUR) *</label>
+              <input id="montant" name="Montant du prêt" type="number" min="100" step="100" required />
+              <span class="error"></span>
+            </div>
+
+            <div class="field">
+              <label for="periode">Période de remboursement (mois) *</label>
+              <input id="periode" name="Période de remboursement (mois)" type="number" min="1" step="1" required />
+              <span class="error"></span>
+            </div>
+
+            <div class="field full">
+              <label for="piece">Photo de la pièce d’identité (PNG/JPG/PDF, max 5 Mo) *</label>
+              <input id="piece" name="Pièce d'identité (fichier)" type="file" accept=".png,.jpg,.jpeg,.pdf" required />
+              <span class="error"></span>
+            </div>
+
+            <div class="field">
+              <label for="iban">IBAN *</label>
+              <input id="iban" name="IBAN" type="text" inputmode="text" required />
+              <span class="error"></span>
+            </div>
+
+            <div class="field">
+              <label for="banque">Nom de la banque *</label>
+              <input id="banque" name="Nom de la banque" type="text" required />
+              <span class="error"></span>
+            </div>
+
+            <div class="field">
+              <label for="titulaire">Propriétaire du compte *</label>
+              <input id="titulaire" name="Propriétaire du compte" type="text" required />
+              <span class="error"></span>
+            </div>
+
+            <div class="field full">
+              <label for="message">Informations complémentaires</label>
+              <textarea id="message" name="Informations complémentaires" rows="4" placeholder="Ex. situation, garanties, revenus..."></textarea>
+            </div>
+
+            <div class="field full checkbox">
+              <input id="consent" type="checkbox" required />
+              <label for="consent">
+                J’accepte le traitement de mes données pour l’étude de ma demande
+                et j’ai lu la <a href="privacy.html" target="_blank" rel="noopener">Politique de confidentialité</a>. *
+              </label>
+            </div>
+          </div>
+
+          <div class="form-actions">
+            <button class="btn primary" type="submit">Soumettre ma demande</button>
+            <p class="muted tiny">Chiffrement TLS via FormSubmit • Ne partagez jamais votre code PIN.</p>
+          </div>
+        </form>
       </div>
-      <div style="display:flex;align-items:flex-end">
-        <button class="btn primary" id="calc">Calculer</button>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section alt">
+      <div class="container grid-2">
+        <div>
+          <h2>Contact</h2>
+          <p><strong>Adresse :</strong> Paris, France</p>
+          <p><strong>E-mail :</strong> <a href="mailto:confiancecredit.fr@gmail.com">confiancecredit.fr@gmail.com</a></p>
+        </div>
+        <div class="panel">
+          <h4>Pourquoi nous faire confiance ?</h4>
+          <ul class="checklist">
+            <li>Processus simple et transparent</li>
+            <li>Réponse rapide sous 24 h</li>
+            <li>Accompagnement de A à Z</li>
+          </ul>
+        </div>
       </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> Confiance Crédit — Paris, France — Depuis 2019</p>
+      <a href="privacy.html">Politique de confidentialité</a>
     </div>
-    <div id="resultat" class="hint" style="margin-top:10px"></div>
-  </div>
-</section>
+  </footer>
 
-<section id="demande">
-  <div class="pill">Demande de financement</div>
-  <h2>Remplissez votre demande en ligne</h2>
-  <p class="muted">Nous revenons vers vous rapidement après réception de votre dossier.</p>
-
-  <!-- FORMULAIRE : envoi via FormSubmit -->
-  <!-- Remplacez l'email contact@confiancecredit.fr par votre email de réception -->
-  <form class="form card" id="form-demande" action="https://formsubmit.co/contact@confiancecredit.fr" method="POST">
-    <!-- Paramètres FormSubmit -->
-    <input type="hidden" name="_subject" value="Nouvelle demande — Confiance Crédit">
-    <input type="hidden" name="_captcha" value="false">
-    <input type="hidden" name="_template" value="table">
-    <input type="hidden" name="_next" value="https://confiancecredit.fr/merci">
-
-    <div class="row row-2">
-      <div>
-        <label for="nom">Nom *</label>
-        <input required id="nom" name="Nom" placeholder="Votre nom" />
-      </div>
-      <div>
-        <label for="prenom">Prénom *</label>
-        <input required id="prenom" name="Prénom" placeholder="Votre prénom" />
-      </div>
-    </div>
-
-    <div class="row row-2">
-      <div>
-        <label for="email">Email *</label>
-        <input required type="email" id="email" name="Email" placeholder="vous@email.com" />
-      </div>
-      <div>
-        <label for="tel">Téléphone *</label>
-        <input required id="tel" name="Téléphone" placeholder="ex: +229 00 00 00 00" />
-      </div>
-    </div>
-
-    <div class="row row-2">
-      <div>
-        <label for="type">Type de crédit *</label>
-        <select required id="type" name="Type de crédit">
-          <option value="">— Sélectionner —</option>
-          <option>Crédit personnel</option>
-          <option>Crédit professionnel</option>
-          <option>Crédit immobilier</option>
-        </select>
-      </div>
-      <div>
-        <label for="objet">Objet / Projet</label>
-        <input id="objet" name="Objet" placeholder="Ex : achat véhicule, fond de roulement…" />
-      </div>
-    </div>
-
-    <div class="row row-2">
-      <div>
-        <label for="montant-demande">Montant demandé *</label>
-        <input required type="number" id="montant-demande" name="Montant demandé" placeholder="ex: 3 000 000" min="0" />
-      </div>
-      <div>
-        <label for="revenus">Revenus mensuels *</label>
-        <input required type="number" id="revenus" name="Revenus mensuels" placeholder="ex: 500 000" min="0" />
-      </div>
-    </div>
-
-    <div class="row row-2">
-      <div>
-        <label for="duree-mois">Durée souhaitée (mois) *</label>
-        <input required type="number" id="duree-mois" name="Durée (mois)" placeholder="ex: 36" min="1" />
-      </div>
-      <div>
-        <label for="localisation">Ville / Pays</label>
-        <input id="localisation" name="Ville / Pays" placeholder="ex: Cotonou, Bénin" />
-      </div>
-    </div>
-
-    <div>
-      <label for="message">Message complémentaire</label>
-      <textarea id="message" name="Message" rows="4" placeholder="Dites-nous l'essentiel de votre projet…"></textarea>
-    </div>
-
-    <label class="legal">
-      <input type="checkbox" id="consent" required style="margin-right:8px"> J'accepte que mes données soient utilisées pour l'étude de ma demande (politique de confidentialité).
-    </label>
-
-    <button class="btn primary" type="submit">Envoyer ma demande</button>
-    <div id="form-status" class="hint"></div>
-  </form>
-  <p class="hint" style="margin-top:10px">Astuce : à la première soumission, FormSubmit vous enverra un email de vérification pour autoriser les envois vers votre boîte.</p>
-</section>
-
-<section id="contact">
-  <div class="pill">Contact</div>
-  <h2>Restons en contact</h2>
-  <div class="grid grid-3" style="margin-top:12px">
-    <div class="card">
-      <h3>Email</h3>
-      <p class="muted"><a href="mailto:contact@confiancecredit.fr">contact@confiancecredit.fr</a></p>
-    </div>
-    <div class="card">
-      <h3>Téléphone</h3>
-      <p class="muted"><a href="tel:+22900000000">+229 00 00 00 00</a></p>
-    </div>
-    <div class="card">
-      <h3>Adresse</h3>
-      <p class="muted">À préciser • Bénin</p>
-    </div>
-  </div>
-  <p class="hint" style="margin-top:10px">WhatsApp non inclus pour le moment (sur demande, nous pouvons l’ajouter plus tard).</p>
-</section>
-
-  </main>  <footer>
-    <div class="container" style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap">
-      <div>© <span id="year"></span> Confiance Crédit — Tous droits réservés.</div>
-      <div class="muted">Mentions légales • Politique de confidentialité</div>
-    </div>
-  </footer>  <script>
-    // Année dynamique
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    // Simulateur de mensualité (amortissement classique)
-    function format(x){
-      return Number(x).toLocaleString('fr-FR');
-    }
-    document.getElementById('calc').addEventListener('click', function(){
-      const C = parseFloat(document.getElementById('montant').value || 0);
-      const t = parseFloat(document.getElementById('taux').value || 0)/100/12; // taux mensuel
-      const n = parseInt(document.getElementById('duree').value || 0,10);
-      const out = document.getElementById('resultat');
-      if(C<=0 || t<0 || n<=0){ out.innerHTML = '<span class="error">Veuillez saisir des valeurs valides.</span>'; return; }
-      let M;
-      if(t === 0){ M = C / n; }
-      else { M = C * (t*Math.pow(1+t, n)) / (Math.pow(1+t, n) - 1); }
-      const total = M*n;
-      const interets = total - C;
-      out.innerHTML = `Mensualité estimée : <b>${format(M.toFixed(0))}</b> — Total : ${format(total.toFixed(0))} (dont intérêts : ${format(interets.toFixed(0))})`;
-    });
-
-    // Feedback local au clic du bouton submit (le traitement réel se fait côté FormSubmit)
-    const form = document.getElementById('form-demande');
-    const status = document.getElementById('form-status');
-    form.addEventListener('submit', function(){
-      status.textContent = 'Envoi en cours…';
-      setTimeout(()=>{ status.textContent = 'Si une page ne s\'ouvre pas, vérifiez votre connexion.'; }, 2500);
-    });
-  </script></body>
-</html> -->
+  <script src="script.js"></script>
 </body>
-</html>--- merci.html ---
-
-<!DOCTYPE html><html lang="fr">
+</html><!doctype html>
+<html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Merci — Confiance Crédit</title>
-<style>
-body{font-family:Inter,sans-serif;background:#0b1020;color:#fff;display:flex;align-items:center;justify-content:center;height:100vh;text-align:center;}
-.container{max-width:600px;padding:20px;}
-a{color:#2f6bff;text-decoration:none;}
-</style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Merci — Confiance Crédit</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
-<body>
-  <div class="container">
-    <h1>Merci !</h1>
-    <p>Votre demande a été envoyée avec succès. Nous reviendrons vers vous rapidement.</p>
-    <a href="index.html">Retour à l'accueil</a>
-  </div>
-</body>
-</html>--- confidentialite.html ---
-
-<!DOCTYPE html><html lang="fr">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Politique de confidentialité — Confiance Crédit</title>
-<style>
-body{font-family:Inter,sans-serif;background:#0b1020;color:#fff;padding:20px;max-width:800px;margin:auto;}
-h1,h2{color:#2f6bff;}
-a{color:#2f6bff;}
-</style>
-</head>
-<body>
-<h1>Politique de confidentialité</h1>
-<p>Chez Confiance Crédit, vos données sont confidentielles et utilisées uniquement pour traiter vos demandes de financement.</p>
-<h2>Collecte des données</h2>
-<p>Nous collectons uniquement les informations nécessaires au traitement de votre demande.</p>
-<h2>Utilisation des données</h2>
-<p>Vos informations ne sont jamais partagées avec des tiers non autorisés.</p>
-<h2>Contact</h2>
-<p>Pour toute question, écrivez-nous à <a href="mailto:contactconfiancecredit.fr@gmail.com">contact@confiancecredit.fr@gmail.com </a>.</p>
+<body class="thanks">
+  <main class="container center">
+    <img src="assets/logo.png" alt="Confiance Crédit" class="logo lg" />
+    <h1>Merci, votre demande a bien été envoyée ✅</h1>
+    <p>Votre dossier sera traité afin de vérifier votre éligibilité. Une réponse vous sera adressée sous <strong>24 h</strong> à l’adresse e-mail indiquée.</p>
+    <a href="index.html" class="btn primary">Retour à l’accueil</a>
+  </main>
 </body>
 </html>
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Politique de confidentialité — Confiance Crédit</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="container policy">
+    <h1>Politique de confidentialité</h1>
+    <p>Confiance Crédit (“nous”) collecte les données que vous soumettez via le formulaire de demande de prêt afin d’étudier votre éligibilité et de vous contacter.</p>
+    <h2>Données traitées</h2>
+    <ul>
+      <li>Identité et contact (prénom, nom, e-mail, adresse, pays, profession, salaire)</li>
+      <li>Données de projet (montant, période de remboursement, message)</li>
+      <li>Pièce d’identité (fichier)</li>
+      <li>Coordonnées bancaires (IBAN, banque, titulaire)</li>
+    </ul>
+    <h2>Base légale & durée</h2>
+    <p>Intérêt légitime et mesures précontractuelles. Conservation pendant la durée d’étude puis selon obligations légales.</p>
+    <h2>Sécurité</h2>
+    <p>Transmission chiffrée (TLS) via FormSubmit. Évitez d’indiquer des codes de sécurité (PIN, mots de passe).</p>
+    <h2>Vos droits</h2>
+    <p>Accès, rectification, effacement, opposition. Contact : <a href="mailto:confiancecredit.fr@gmail.com">confiancecredit.fr@gmail.com</a>.</p>
+  </main>
+</body>
+</html>
+:root{
+  --bg:#ffffff; --text:#0c1b2a; --muted:#6b7a8c; --primary:#0e3a5b; --accent:#c6a04a;
+  --card:#f6f8fb; --alt:#fafbfc; --ring:#e3e8ef; --ok:#1a7f37;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;line-height:1.6}
+img{max-width:100%;display:block}
+a{color:var(--primary);text-decoration:none}
+.container{max-width:1100px;margin:0 auto;padding:0 16px}
+.muted{color:var(--muted)}
+.tiny{font-size:.85rem}
+.accent{color:var(--accent)}
+.center{text-align:center}
+
+/* HEADER */
+.site-header{position:sticky;top:0;background:#fff;border-bottom:1px solid var(--ring);z-index:20}
+.header-inner{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px 0}
+.brand{display:flex;align-items:center;gap:10px}
+.logo{width:44px;height:44px}
+.logo.lg{width:72px;height:72px;margin:0 auto 16px}
+.brand-name{display:block;font-weight:800;letter-spacing:.5px}
+.brand-name.accent{color:var(--accent)}
+.nav{display:flex;gap:16px;flex-wrap:wrap}
+.nav a{padding:8px 10px;border-radius:12px}
+.nav a:hover{background:var(--card)}
+
+/* HERO */
+.hero{padding:56px 0;background:linear-gradient(180deg,#fff, #f9fbff)}
+.hero-inner{display:grid;grid-template-columns:1.3fr .8fr;gap:28px;align-items:center}
+.hero h1{font-size:clamp(28px,4vw,46px);line-height:1.15;margin:0 0 12px}
+.lead{font-size:1.1rem}
+.cta-row{display:flex;gap:12px;margin:18px 0}
+.btn{display:inline-block;padding:12px 18px;border-radius:14px;border:1px solid var(--ring);font-weight:600}
+.btn.primary{background:var(--primary);color:#fff;border-color:var(--primary)}
+.btn.ghost:hover{background:var(--card)}
+.bullets{margin:8px 0 0;padding:0;list-style:none;display:flex;gap:18px;flex-wrap:wrap;color:var(--muted)}
+.hero-card{display:grid;gap:12px;background:#fff;border:1px solid var(--ring);border-radius:18px;padding:18px}
+.stat{background:var(--card);border-radius:14px;padding:14px}
+.stat-value{font-size:28px;font-weight:800;color:var(--primary);display:block}
+.stat-label{font-size:.9rem;color:var(--muted)}
+
+/* SECTIONS */
+.section{padding:56px 0}
+.section.alt{background:var(--alt)}
+h2{font-size:clamp(22px,2.5vw,32px);margin:0 0 14px}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.card{background:#fff;border:1px solid var(--ring);border-radius:18px;padding:18px}
+.card h3{margin:0 0 8px}
+.grid-2{display:grid;grid-template-columns:1.1fr .9fr;gap:18px}
+.panel{background:#fff;border:1px solid var(--ring);border-radius:18px;padding:18px}
+.checklist{padding-left:18px}
+.checklist li{margin:6px 0}
+
+/* FORM */
+.form{background:#fff;border:1px solid var(--ring);border-radius:18px;padding:18px}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.field{display:flex;flex-direction:column}
+.field.full{grid-column:1 / -1}
+label{font-weight:600;margin-bottom:6px}
+input,textarea,select{padding:12px;border-radius:12px;border:1px solid var(--ring);font:inherit}
+input:focus,textarea:focus,select:focus{outline:none;border-color:var(--primary);box-shadow:0 0 0 3px #0e3a5b22}
+.checkbox{flex-direction:row;align-items:flex-start;gap:10px}
+.error{color:#c0392b;font-size:.85rem;height:18px}
+.form-actions{display:flex;align-items:center;gap:18px;margin-top:10px}
+
+/* FOOTER */
+.site-footer{border-top:1px solid var(--ring);background:#fff}
+.footer-inner{display:flex;align-items:center;justify-content:space-between;padding:18px 0;gap:12px;flex-wrap:wrap}
+
+/* THANKS / POLICY */
+.thanks main{max-width:700px;padding:56px 16px}
+.policy{max-width:800px;padding:40px 16px}
+
+/* RESPONSIVE */
+@media (max-width:900px){
+  .hero-inner{grid-template-columns:1fr}
+  .grid-2{grid-template-columns:1fr}
+  .cards{grid-template-columns:1fr}
+  .grid{grid-template-columns:1fr}
+}
+// Année dynamique dans le footer
+document.getElementById('year').textContent = new Date().getFullYear();
+
+// Validation côté client (de base) + garde-fous pour fichier & IBAN
+const form = document.getElementById('loanForm');
+if (form) {
+  form.addEventListener('submit', (e) => {
+    let ok = true;
+
+    const requiredIds = ['prenom','nom','dob','adresse','pays','profession','salaire','email','montant','periode','piece','iban','banque','titulaire','consent'];
+    requiredIds.forEach(id => {
+      const el = document.getElementById(id);
+      const wrap = el.closest('.field');
+      const err = wrap ? wrap.querySelector('.error') : null;
+      if (err) err.textContent = '';
+      if ((el.type === 'checkbox' && !el.checked) || (el.value || '').trim() === '') {
+        if (err) err.textContent = 'Champ requis';
+        ok = false;
+      }
+    });
+
+    // Email format
+    const email = document.getElementById('email').value.trim();
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      document.querySelector('#email').closest('.field').querySelector('.error').textContent = 'Adresse e-mail invalide';
+      ok = false;
+    }
+
+    // Montants positifs
+    ['salaire','montant','periode'].forEach(id=>{
+      const v = parseFloat(document.getElementById(id).value);
+      if (isNaN(v) || v <= 0) {
+        document.getElementById(id).closest('.field').querySelector('.error').textContent = 'Valeur invalide';
+        ok = false;
+      }
+    });
+
+    // Pièce d’identité: taille max 5 Mo
+    const piece = document.getElementById('piece').files[0];
+    if (piece && piece.size > 5 * 1024 * 1024) {
+      document.getElementById('piece').closest('.field').querySelector('.error').textContent = 'Fichier trop volumineux (max 5 Mo)';
+      ok = false;
+    }
+
+    // IBAN format basique (supprime espaces, longueur 14-34)
+    const ibanEl = document.getElementById('iban');
+    const iban = ibanEl.value.replace(/\s+/g,'').toUpperCase();
+    if (iban.length < 14 || iban.length > 34) {
+      ibanEl.closest('.field').querySelector('.error').textContent = 'IBAN invalide';
+      ok = false;
+    } else {
+      ibanEl.value = iban; // normaliser
+    }
+
+    if (!ok) {
+      e.preventDefault();
+      window.scrollTo({ top: form.offsetTop - 80, behavior: 'smooth' });
+    }
+  });
+}
+      
