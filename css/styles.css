@@ -1,45 +1,128 @@
-body {
-  margin:0;
-  font-family: Arial, sans-serif;
-  background:#0e3a5b;   /* bleu foncé */
-  color:#fff;
+/* Reset */
+body, h1, h2, p {
+  margin: 0;
+  padding: 0;
 }
 
+/* Fond général bleu clair en dégradé */
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #0d47a1, #2196f3);
+  color: #333;
+  line-height: 1.8;
+  margin: 0;
+  font-size: 18px; /* texte légèrement plus grand */
+}
+
+/* Header */
 header {
-  background:#052238;
-  padding:15px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
+  background: #0d47a1;
+  color: white;
+  padding: 20px;
+  text-align: center;
 }
 
 header .logo {
-  width:80px;
-  height:auto;
+  max-height: 80px;
+}
+
+nav {
+  margin-top: 10px;
 }
 
 nav a {
-  color:#fff;
-  margin:0 10px;
-  text-decoration:none;
+  color: white;
+  text-decoration: none;
+  margin: 0 15px;
+  font-weight: bold;
+  transition: color 0.3s;
+  font-size: 18px;
 }
 
-nav a.active, nav a:hover {
-  text-decoration:underline;
+nav a:hover,
+nav a.active {
+  color: #ffeb3b; /* jaune vif */
 }
 
+/* Contenu principal */
 main {
-  background:#fff;
-  color:#333;
-  max-width:900px;
-  margin:20px auto;
-  padding:20px;
-  border-radius:10px;
+  padding: 40px;
+  text-align: center;
 }
 
+section, form {
+  background: white;
+  padding: 30px;
+  margin: 20px auto;
+  border-radius: 12px;
+  max-width: 900px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+/* Titres */
+h1 {
+  font-size: 32px;
+  color: #0d47a1;
+  margin-bottom: 20px;
+  border-bottom: 4px solid #ffeb3b;
+  display: inline-block;
+  padding-bottom: 6px;
+}
+
+h2 {
+  font-size: 26px;
+  color: #0d47a1;
+  margin-bottom: 15px;
+  border-bottom: 3px solid #ffeb3b;
+  display: inline-block;
+  padding-bottom: 4px;
+}
+
+/* Formulaire */
+form label {
+  display: block;
+  margin-bottom: 15px;
+  font-weight: bold;
+  color: #333;
+  font-size: 18px;
+}
+
+form input, form textarea, form button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 6px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+}
+
+form input, form textarea {
+  background: #f9f9f9;
+  color: #333;
+}
+
+form button {
+  background: #ffeb3b;
+  color: #0d47a1;
+  cursor: pointer;
+  font-weight: bold;
+  border: none;
+  margin-top: 20px;
+  font-size: 18px;
+  transition: background 0.3s;
+}
+
+form button:hover {
+  background: #fdd835;
+}
+
+/* Footer */
 footer {
-  background:#052238;
-  text-align:center;
-  padding:10px;
-  margin-top:20px;
+  background: #0d47a1;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  margin-top: 50px;
+  border-top: 4px solid #ffeb3b;
+  font-size: 16px;
 }
