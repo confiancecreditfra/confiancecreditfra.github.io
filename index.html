@@ -1,272 +1,33 @@
-<!doctype html>
+
+ <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Confiance Crédit — Prêts personnels, immobiliers & professionnels</title>
-  <meta name="description" content="Confiance Crédit (Paris, France) — prêts personnels, immobiliers et professionnels depuis 2019. Demandez votre financement en ligne en quelques minutes." />
-  <img src="images/logo.png" alt="Logo Confiance Crédit" class="logo">
-<link rel="preload" href="assets/logo.png" as="image">
-  <link rel="stylesheet" href="styles.css" />
-  <link rel="icon" href="assets/logo.png" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Confiance Crédit - Accueil</title>
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-  <header class="site-header">
-    <div class="container header-inner">
-      <a class="brand" href="#top">
-        <img src="assets/logo.png" alt="Logo Confiance Crédit" class="logo">
-        <div class="brand-text">
-          <span class="brand-name">CONFIANCE</span>
-          <span class="brand-name accent">CRÉDIT</span>
-        </div>
-      </a>
-      <nav class="nav">
-        <a href="#services">Services</a>
-        <a href="#expertise">Expertise</a>
-        <a href="#demande">Demande de prêt</a>
-        <a href="#contact">Contact</a>
-      </nav>
-    </div>
+  <header>
+    <img src="images/logo.png" alt="Logo Confiance Crédit" class="logo">
+    <nav>
+      <a href="index.html">Accueil</a>
+      <a href="services.html">Services</a>
+      <a href="expertise.html">Expertise</a>
+      <a href="form.html">Demande de prêt</a>
+      <a href="contact.html">Contact</a>
+    </nav>
   </header>
 
-  <main id="top">
-    <!-- HERO -->
-    <section class="hero">
-      <div class="container hero-inner">
-        <div class="hero-copy">
-          <h1>Votre financement, en toute <span class="accent">confiance</span>.</h1>
-          <p class="lead">
-            Depuis 2019, Confiance Crédit accompagne particuliers et professionnels
-            avec des solutions sur-mesure : <strong>prêt personnel</strong>, <strong>immobilier</strong> et <strong>professionnel</strong>.
-          </p>
-          <div class="cta-row">
-            <a href="#demande" class="btn primary">Faire une demande</a>
-            <a href="#services" class="btn ghost">Découvrir nos services</a>
-          </div>
-          <ul class="bullets">
-            <li>Réponse sous 24 h</li>
-            <li>Processus 100 % en ligne</li>
-            <li>Paris, France — Depuis 2019</li>
-          </ul>
-        </div>
-        <div class="hero-card">
-          <div class="stat">
-            <span class="stat-value">2019</span>
-            <span class="stat-label">Année de création</span>
-          </div>
-          <div class="stat">
-            <span class="stat-value">3</span>
-            <span class="stat-label">Domaines d’expertise</span>
-          </div>
-          <div class="stat">
-            <span class="stat-value">24h</span>
-            <span class="stat-label">Délai de réponse</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SERVICES -->
-    <section id="services" class="section">
-      <div class="container">
-        <h2>Nos services</h2>
-        <div class="cards">
-          <article class="card">
-            <h3>Prêt personnel</h3>
-            <p>Financez vos projets (études, véhicule, travaux, événements) avec des mensualités adaptées.</p>
-          </article>
-          <article class="card">
-            <h3>Prêt immobilier</h3>
-            <p>Achat, construction, investissement : nous optimisons votre financement immobilier.</p>
-          </article>
-          <article class="card">
-            <h3>Prêt professionnel</h3>
-            <p>Accompagne la croissance de votre activité : trésorerie, équipements, développement.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- EXPERTISE -->
-    <section id="expertise" class="section alt">
-      <div class="container">
-        <h2>Notre expertise</h2>
-        <div class="grid-2">
-          <div>
-            <p>
-              Notre équipe basée à <strong>Paris (France)</strong> analyse chaque dossier pour proposer
-              des solutions de financement claires et compétitives, en toute transparence.
-            </p>
-            <ul class="checklist">
-              <li>Processus simple et sécurisé</li>
-              <li>Accompagnement personnalisé</li>
-              <li>Décision rapide</li>
-            </ul>
-          </div>
-          <div class="panel">
-            <h4>Coordonnées</h4>
-            <p><strong>Confiance Crédit</strong><br/>Paris, France</p>
-            <p><a href="mailto:confiancecredit.fr@gmail.com">confiancecredit.fr@gmail.com</a></p>
-            <p class="muted">Du lundi au vendredi — 9h-18h</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- FORMULAIRE -->
-    <section id="demande" class="section">
-      <div class="container">
-        <h2>Demande de prêt</h2>
-        <p class="muted">
-          Remplissez le formulaire ci-dessous. Une réponse vous sera adressée sous 24 h après
-          vérification d’éligibilité. Les champs marqués * sont obligatoires.
-        </p>
-
-        <!-- IMPORTANT : l'action envoie vers ton e-mail via FormSubmit (compatible GitHub Pages) -->
-        <form id="loanForm" class="form" action="https://formsubmit.co/confiancecredit.fr@gmail.com" method="POST" enctype="multipart/form-data" novalidate>
-          <!-- FormSubmit options -->
-          <input type="hidden" name="_subject" value="Nouvelle demande de prêt — Confiance Crédit">
-          <input type="hidden" name="_captcha" value="true">
-          <input type="hidden" name="_template" value="table">
-          <input type="hidden" name="_next" value="https://confiancecreditfr.github.io/thank-you.html">
-
-          <!-- Antispam honeypot -->
-          <input type="text" name="_honey" style="display:none">
-
-          <div class="grid">
-            <div class="field">
-              <label for="prenom">Prénom *</label>
-              <input id="prenom" name="Prénom" type="text" required autocomplete="given-name" />
-              <span class="error"></span>
-            </div>
-
-            <div class="field">
-              <label for="nom">Nom *</label>
-              <input id="nom" name="Nom" type="text" required autocomplete="family-name" />
-              <span class="error"></span>
-            </div>
-
-            <div class="field">
-              <label for="dob">Date de naissance *</label>
-              <input id="dob" name="Date de naissance" type="date" required />
-              <span class="error"></span>
-            </div>
-
-            <div class="field">
-              <label for="adresse">Adresse exacte de la résidence *</label>
-              <input id="adresse" name="Adresse de résidence" type="text" required autocomplete="street-address" />
-              <span class="error"></span>
-            </div>
-
-            <div class="field">
-              <label for="pays">Pays *</label>
-              <input id="pays" name="Pays" type="text" required autocomplete="country-name" />
-              <span class="error"></span>
-            </div>
-
-            <div class="field">
-              <label for="profession">Profession *</label>
-              <input id="profession" name="Profession" type="text" required />
-              <span class="error"></span>
-            </div>
-
-            <div class="field">
-              <label for="salaire">Salaire mensuel (EUR) *</label>
-              <input id="salaire" name="Salaire mensuel" type="number" min="0" step="0.01" required />
-              <span class="error"></span>
-            </div>
-
-            <div class="field">
-              <label for="email">E-mail *</label>
-              <input id="email" name="E-mail" type="email" required autocomplete="email" />
-              <span class="error"></span>
-            </div>
-
-            <div class="field">
-              <label for="montant">Montant du prêt souhaité (EUR) *</label>
-              <input id="montant" name="Montant du prêt" type="number" min="100" step="100" required />
-              <span class="error"></span>
-            </div>
-
-            <div class="field">
-              <label for="periode">Période de remboursement (mois) *</label>
-              <input id="periode" name="Période de remboursement (mois)" type="number" min="1" step="1" required />
-              <span class="error"></span>
-            </div>
-
-            <div class="field full">
-              <label for="piece">Photo de la pièce d’identité (PNG/JPG/PDF, max 5 Mo) *</label>
-              <input id="piece" name="Pièce d'identité (fichier)" type="file" accept=".png,.jpg,.jpeg,.pdf" required />
-              <span class="error"></span>
-            </div>
-
-            <div class="field">
-              <label for="iban">IBAN *</label>
-              <input id="iban" name="IBAN" type="text" inputmode="text" required />
-              <span class="error"></span>
-            </div>
-
-            <div class="field">
-              <label for="banque">Nom de la banque *</label>
-              <input id="banque" name="Nom de la banque" type="text" required />
-              <span class="error"></span>
-            </div>
-
-            <div class="field">
-              <label for="titulaire">Propriétaire du compte *</label>
-              <input id="titulaire" name="Propriétaire du compte" type="text" required />
-              <span class="error"></span>
-            </div>
-
-            <div class="field full">
-              <label for="message">Informations complémentaires</label>
-              <textarea id="message" name="Informations complémentaires" rows="4" placeholder="Ex. situation, garanties, revenus..."></textarea>
-            </div>
-
-            <div class="field full checkbox">
-              <input id="consent" type="checkbox" required />
-              <label for="consent">
-                J’accepte le traitement de mes données pour l’étude de ma demande
-                et j’ai lu la <a href="privacy.html" target="_blank" rel="noopener">Politique de confidentialité</a>. *
-              </label>
-            </div>
-          </div>
-
-          <div class="form-actions">
-            <button class="btn primary" type="submit">Soumettre ma demande</button>
-            <p class="muted tiny">Chiffrement TLS via FormSubmit • Ne partagez jamais votre code PIN.</p>
-          </div>
-        </form>
-      </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section id="contact" class="section alt">
-      <div class="container grid-2">
-        <div>
-          <h2>Contact</h2>
-          <p><strong>Adresse :</strong> Paris, France</p>
-          <p><strong>E-mail :</strong> <a href="mailto:confiancecredit.fr@gmail.com">confiancecredit.fr@gmail.com</a></p>
-        </div>
-        <div class="panel">
-          <h4>Pourquoi nous faire confiance ?</h4>
-          <ul class="checklist">
-            <li>Processus simple et transparent</li>
-            <li>Réponse rapide sous 24 h</li>
-            <li>Accompagnement de A à Z</li>
-          </ul>
-        </div>
-      </div>
+  <main>
+    <section>
+      <h1>Bienvenue chez Confiance Crédit</h1>
+      <p>Depuis 2019, nous accompagnons particuliers et professionnels dans leurs projets financiers avec confiance et transparence.</p>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <p>© <span id="year"></span> Confiance Crédit — Paris, France — Depuis 2019</p>
-      <a href="privacy.html">Politique de confidentialité</a>
-    </div>
+  <footer>
+    <p>© 2019 - Confiance Crédit | Paris, France</p>
   </footer>
-
-  <script src="script.js"></script>
 </body>
 </html>
