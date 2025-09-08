@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Demande de prêt - Confiance Crédit</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header>
+    <img src="images/logo.png" alt="Logo" class="logo" style="max-height:80px;">
+    <nav>
+      <a href="index.html">Accueil</a>
+      <a href="services.html">Services</a>
+      <a href="expertise.html">Expertise</a>
+      <a href="form.html" class="active">Demande de prêt</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Formulaire de demande de prêt</h1>
+    <form id="loan-form">
+      <label>Prénom : <input type="text" name="prenom" required></label><br>
+      <label>Nom : <input type="text" name="nom" required></label><br>
+      <label>Date de naissance : <input type="date" name="dob" required></label><br>
+      <label>Adresse : <input type="text" name="adresse" required></label><br>
+      <label>Pays : <input type="text" name="pays" required></label><br>
+      <label>Profession : <input type="text" name="profession" required></label><br>
+      <label>Salaire : <input type="number" name="salaire" required></label><br>
+      <label>Email : <input type="email" name="email" required></label><br>
+      <label>Montant du prêt : <input type="number" name="montant" required></label><br>
+      <label>Période de remboursement : <input type="text" name="periode" required></label><br>
+      <label>IBAN : <input type="text" name="iban"></label><br>
+      <label>Nom de la banque : <input type="text" name="banque"></label><br>
+      <label>Propriétaire du compte : <input type="text" name="titulaire"></label><br>
+      <button type="submit">Envoyer</button>
+    </form>
+  </main>
+
+  <footer>
+    <p>© 2019 - Confiance Crédit</p>
+  </footer>
+
+  <!-- Script EmailJS -->
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <script>
+    (function(){
+      emailjs.init("c8ZN5oyhh7vUaeXzd"); // Public Key
+    })();
+
+    document.getElementById("loan-form").addEventListener("submit", function(event){
+      event.preventDefault();
+
+      emailjs.sendForm("service_8ukh7wp", "template_0axeamd", this)
+        .then(function() {
+          alert("✅ Demande envoyée avec succès !");
+          window.location.href = "thank-you.html"; // redirection après envoi
+        }, function(error) {
+          alert("❌ Une erreur est survenue : " + JSON.stringify(error));
+        });
+    });
+  </script>
+</body>
+</html>
