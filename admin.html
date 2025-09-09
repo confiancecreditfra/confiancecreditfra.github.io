@@ -2,17 +2,17 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>Admin - Envoi Email d'Acceptation</title>
+  <title>Admin - Gestion Emails</title>
   <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
   <script>
     (function(){
-      emailjs.init("c8ZN5oyhh7vUaeXzd"); // Ton Public Key EmailJS
+      emailjs.init("c8ZN5oyhh7vUaeXzd"); // Public Key
     })();
 
     // Vérification du mot de passe
     function login() {
       const password = document.getElementById("password").value;
-      if (password === "Confiance2025!") { // 🔑 Change ce mot de passe
+      if (password === "Confiance2025!") {
         document.getElementById("login-box").style.display = "none";
         document.getElementById("admin-panel").style.display = "block";
       } else {
@@ -20,17 +20,19 @@
       }
     }
 
-    // Envoi de l'email d'acceptation
-    function sendAcceptanceEmail(event) {
+    // Envoi de l'email selon le modèle choisi
+    function sendEmail(event) {
       event.preventDefault();
 
-      emailjs.send("service_8ukh7wp", "template_0axeamd", {
+      const selectedTemplate = document.getElementById("template").value;
+
+      emailjs.send("service_8ukh7wp", selectedTemplate, {
         prenom: document.getElementById("prenom").value,
         montant: document.getElementById("montant").value,
         email: document.getElementById("email").value
       })
       .then(function() {
-        alert("✅ Email d'acceptation envoyé avec succès !");
+        alert("✅ Email envoyé avec succès !");
       }, function(error) {
         alert("❌ Erreur : " + JSON.stringify(error));
       });
@@ -50,16 +52,23 @@
 
   <!-- Panneau admin -->
   <div id="admin-panel" style="display:none; max-width:400px; margin:auto; background:white; padding:20px; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.2);">
-    <h2 style="color:#0d47a1;">📩 Envoyer un Email d’Acceptation</h2>
-    <form onsubmit="sendAcceptanceEmail(event)">
+    <h2 style="color:#0d47a1;">📩 Envoyer un Email</h2>
+    <form onsubmit="sendEmail(event)">
+      
+      <label>Type d'email :</label><br>
+      <select id="template" required style="width:100%; padding:8px; margin-bottom:15px;">
+        <option value="template_acceptation">✅ Acceptation</option>
+        <option value="template_rejet">❌ Rejet</option>
+      </select><br>
+
       <label>Prénom :</label><br>
-      <input type="text" id="prenom" required><br><br>
+      <input type="text" id="prenom" required style="width:100%; padding:8px;"><br><br>
 
       <label>Montant du prêt (€) :</label><br>
-      <input type="number" id="montant" required><br><br>
+      <input type="number" id="montant" required style="width:100%; padding:8px;"><br><br>
 
       <label>Email du client :</label><br>
-      <input type="email" id="email" required><br><br>
+      <input type="email" id="email" required style="width:100%; padding:8px;"><br><br>
 
       <button type="submit" style="background:#0d47a1; color:white; padding:10px 20px; border:none; border-radius:5px; cursor:pointer;">
         Envoyer l’Email
