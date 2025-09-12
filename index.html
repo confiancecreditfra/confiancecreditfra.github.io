@@ -3,87 +3,131 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Confiance Crédit - Accueil</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Accueil - Votre Site Professionnel</title>
   <style>
+    /* ==== Couleurs et typographie ==== */
+    :root {
+      --couleur-primaire: #2C3E50; /* bleu foncé */
+      --couleur-secondaire: #18BC9C; /* vert clair */
+      --couleur-fond: #F7F9FA;
+      --couleur-texte: #333;
+    }
+
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background: linear-gradient(135deg, #1e3a8a, #3b82f6);
-      color: white;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: var(--couleur-fond);
+      color: var(--couleur-texte);
     }
+
+    /* ==== Header ==== */
     header {
-      background: #1e3a8a;
-      padding: 15px;
-      text-align: center;
+      background-color: var(--couleur-primaire);
+      color: white;
+      padding: 15px 30px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
+
     header img {
-      max-height: 60px;
+      height: 50px;
     }
-    nav {
-      background: #0f172a;
-      padding: 10px;
-      text-align: center;
-    }
+
     nav ul {
       list-style: none;
+      display: flex;
+      gap: 20px;
       margin: 0;
       padding: 0;
     }
-    nav ul li {
-      display: inline-block;
-      margin: 0 15px;
-    }
+
     nav ul li a {
-      color: #facc15;
+      color: white;
       text-decoration: none;
-      font-size: 18px;
       font-weight: bold;
+      transition: color 0.3s;
     }
+
     nav ul li a:hover {
+      color: var(--couleur-secondaire);
+    }
+
+    /* ==== Section principale ==== */
+    .hero {
+      text-align: center;
+      padding: 80px 20px;
+      background: linear-gradient(to right, var(--couleur-primaire), var(--couleur-secondaire));
       color: white;
     }
-    .hero {
-      padding: 60px 20px;
-      text-align: center;
-    }
+
     .hero h1 {
-      font-size: 36px;
+      font-size: 3rem;
       margin-bottom: 20px;
     }
+
     .hero p {
-      font-size: 20px;
+      font-size: 1.2rem;
+      margin-bottom: 30px;
     }
+
+    .hero a.button {
+      background-color: white;
+      color: var(--couleur-primaire);
+      padding: 15px 30px;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .hero a.button:hover {
+      background-color: var(--couleur-secondaire);
+      color: white;
+    }
+
+    /* ==== Footer ==== */
     footer {
-      background: #0f172a;
-      padding: 20px;
       text-align: center;
-      color: #ccc;
+      padding: 20px;
+      background-color: var(--couleur-primaire);
+      color: white;
+    }
+
+    @media(max-width: 768px) {
+      .hero h1 { font-size: 2rem; }
+      .hero p { font-size: 1rem; }
+      header { flex-direction: column; gap: 10px; }
+      nav ul { flex-direction: column; gap: 10px; }
     }
   </style>
 </head>
 <body>
+
+  <!-- HEADER -->
   <header>
-    <img src="logo.png" alt="Confiance Crédit Logo">
+    <img src="images/logo.png" alt="Logo">
+    <nav>
+      <ul>
+        <li><a href="demande-de-pret.html">Demande de prêt</a></li>
+        <li><a href="expertise.html">Expertise</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <nav>
-    <ul>
-      <li><a href="index.html">Accueil</a></li>
-      <li><a href="services.html">Services</a></li>
-      <li><a href="contact.html">Contact</a></li>
-      <li><a href="simulateur.html">Simulateur de prêt</a></li>
-    </ul>
-  </nav>
-
+  <!-- SECTION PRINCIPALE -->
   <section class="hero">
-    <h1>Bienvenue chez Confiance Crédit</h1>
-    <p>Votre partenaire de confiance depuis 2019 pour vos prêts personnels, immobiliers et professionnels.</p>
+    <h1>Bienvenue sur Votre Site</h1>
+    <p>Nous vous accompagnons dans vos projets financiers avec professionnalisme et transparence.</p>
+    <a href="demande-de-pret.html" class="button">Faire une demande de prêt</a>
   </section>
 
+  <!-- FOOTER -->
   <footer>
-    <p>&copy; 2019 - Confiance Crédit | Paris, France</p>
-    <p>Email : confiancecredit.fr@gmail.com</p>
+    &copy; 2025 Votre Entreprise. Tous droits réservés.
   </footer>
+
 </body>
 </html>
