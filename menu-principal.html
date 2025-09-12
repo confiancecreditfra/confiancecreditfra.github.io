@@ -1,186 +1,93 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Confiance Crédit - Menu principal</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Confiance Crédit - Menu Principal</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- HEADER avec logo et menus principaux -->
-  <header>
-    <img src="images/logo.png" alt="Logo Confiance Crédit" class="logo">
-    <nav>
-      <a href="demande-de-pret.html">Demande de prêt</a>
-      <a href="services.html">Services</a>
-      <a href="expertise.html">Expertise</a>
-      <a href="simulateur.html">Simulateur de prêt</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-  </header>
+<header>
+  <img src="images/logo.png" alt="Logo Confiance Crédit" class="logo">
+</header>
 
-  <!-- SECTION HERO -->
-  <section class="hero">
-    <h1>Bienvenue sur votre espace Confiance Crédit</h1>
-    <p>Accédez rapidement à tous nos services et à vos demandes de prêt.</p>
-  </section>
+<section class="hero">
+  <h1>Bienvenue sur votre espace Confiance Crédit</h1>
+  <p>Accédez rapidement à tous nos services et fonctionnalités.</p>
+</section>
 
-  <!-- SECTION DES SERVICES -->
-  <section>
-    <h2>Nos Services</h2>
-    <div class="services">
-      <div class="card">
-        <h3>Prêt personnel</h3>
-        <p>Obtenez un prêt adapté à vos besoins personnels avec un taux avantageux.</p>
-      </div>
-      <div class="card">
-        <h3>Prêt immobilier</h3>
-        <p>Financement pour l’achat de votre logement avec des conditions flexibles.</p>
-      </div>
-      <div class="card">
-        <h3>Prêt professionnel</h3>
-        <p>Des solutions de financement pour développer ou créer votre activité professionnelle.</p>
-      </div>
-      <div class="card">
-        <h3>Prêt pour l'achat de véhicule</h3>
-        <p>Accédez rapidement à un prêt pour l’achat de votre voiture.</p>
-      </div>
-    </div>
-  </section>
+<section class="menu-vertical">
+  <a href="services.html" class="button">Services</a>
+  <a href="expertise.html" class="button">Expertise</a>
+  <a href="simulateur.html" class="button">Simulateur de prêt</a>
+  <a href="demande-de-pret.html" class="button">Demande de prêt</a>
+  <a href="contact.html" class="button">Contact</a>
+</section>
 
-  <!-- SECTION EXPERTISE -->
-  <section>
-    <h2>Notre Expertise</h2>
-    <div class="expertise">
-      <div class="card">
-        <h3>Expertise en prêts</h3>
-        <p>Nous sommes experts dans tous les domaines de prêt, offrant un accompagnement personnalisé et fiable.</p>
-      </div>
-    </div>
-  </section>
+<footer>
+  &copy; 2025 Confiance Crédit | Paris, France | Email : confiancecredit.fr@gmail.com
+</footer>
 
-  <!-- SECTION SIMULATEUR -->
-  <section>
-    <h2>Simulateur de prêt</h2>
-    <p>Calculez rapidement vos mensualités et la durée de votre prêt.</p>
-    <a href="simulateur.html" class="button">Accéder au simulateur</a>
-  </section>
+<style>
+  /* On utilise le même style que la page d’accueil */
+  .logo {
+    height: 90px;
+    display: block;
+    margin: 20px auto;
+  }
 
-  <!-- SECTION CONTACT -->
-  <section class="contact">
-    <h2>Contact</h2>
-    <p>Pour toute question, contactez-nous ou envoyez un message via notre formulaire.</p>
-    <a href="contact.html" class="button">Nous contacter</a>
-  </section>
+  .hero {
+    text-align: center;
+    padding: 60px 20px;
+    background: linear-gradient(to right, #2C3E50, #18BC9C); /* même que la page d’accueil */
+    color: white;
+  }
 
-  <!-- FOOTER -->
-  <footer>
-    &copy; 2025 Confiance Crédit | Paris, France | Email : confiancecredit.fr@gmail.com
-  </footer>
+  .hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+  }
 
-  <style>
-    /* Logo réduit à 90px */
-    .logo {
-      height: 90px;
-      display: block;
-      margin: 0 auto;
-    }
+  .hero p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+  }
 
-    /* Section Hero avec les mêmes couleurs que la page d’accueil */
-    .hero {
-      text-align: center;
-      padding: 80px 20px;
-      background: linear-gradient(to right, #2C3E50, #18BC9C);
-      color: white;
-    }
+  .menu-vertical {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 60px 20px;
+  }
 
-    .hero h1 {
-      font-size: 2.5rem;
-      margin-bottom: 20px;
-    }
+  /* On réutilise la même classe button que la page d’accueil */
+  .button {
+    display: block;
+    width: 250px;
+    text-align: center;
+    background-color: #18BC9C;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    font-size: 1.3rem;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s;
+  }
 
-    .hero p {
-      font-size: 1.2rem;
-      margin-bottom: 30px;
-    }
+  .button:hover {
+    background-color: #2C3E50;
+  }
 
-    .hero .button {
-      background-color: white;
-      color: #2C3E50;
-      padding: 15px 30px;
-      text-decoration: none;
-      border-radius: 5px;
-      font-weight: bold;
-      transition: background-color 0.3s, color 0.3s;
-    }
-
-    .hero .button:hover {
-      background-color: #18BC9C;
-      color: white;
-    }
-
-    footer {
-      text-align: center;
-      padding: 20px;
-      background-color: #2C3E50;
-      color: white;
-    }
-
-    /* Cards */
-    .services, .expertise {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 30px;
-      padding: 40px 20px;
-    }
-
-    .card {
-      background-color: white;
-      padding: 20px;
-      border-radius: 10px;
-      width: 250px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      transition: transform 0.3s;
-      text-align: center;
-    }
-
-    .card:hover {
-      transform: translateY(-5px);
-    }
-
-    .card h3 {
-      color: #2C3E50;
-    }
-
-    .card p {
-      font-size: 0.95rem;
-    }
-
-    /* Section Contact */
-    .contact {
-      background-color: #18BC9C;
-      color: white;
-      padding: 60px 20px;
-      text-align: center;
-    }
-
-    .contact .button {
-      background-color: white;
-      color: #18BC9C;
-      padding: 12px 25px;
-      border-radius: 5px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: background-color 0.3s, color 0.3s;
-    }
-
-    .contact .button:hover {
-      background-color: #2C3E50;
-      color: white;
-    }
-  </style>
+  footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #2C3E50;
+    color: white;
+  }
+</style>
 
 </body>
 </html>
