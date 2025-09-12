@@ -1,11 +1,11 @@
-<!DOCTYPE html>
+
+ <!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Accueil - Votre Site Professionnel</title>
   <style>
-    /* ==== Couleurs et typographie ==== */
     :root {
       --couleur-primaire: #2C3E50; /* bleu foncé */
       --couleur-secondaire: #18BC9C; /* vert clair */
@@ -54,7 +54,7 @@
       color: var(--couleur-secondaire);
     }
 
-    /* ==== Section principale ==== */
+    /* ==== Hero ==== */
     .hero {
       text-align: center;
       padding: 80px 20px;
@@ -87,6 +87,68 @@
       color: white;
     }
 
+    /* ==== Sections ==== */
+    section {
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .services, .expertise {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 30px;
+    }
+
+    .card {
+      background-color: white;
+      padding: 20px;
+      border-radius: 10px;
+      width: 250px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card h3 {
+      margin-top: 0;
+      color: var(--couleur-primaire);
+    }
+
+    .card p {
+      font-size: 0.95rem;
+    }
+
+    /* ==== Contact / Témoignages ==== */
+    .contact {
+      background-color: var(--couleur-primaire);
+      color: white;
+      padding: 60px 20px;
+    }
+
+    .contact h2 {
+      margin-top: 0;
+    }
+
+    .contact a.button {
+      margin-top: 20px;
+      display: inline-block;
+      background-color: white;
+      color: var(--couleur-primaire);
+      padding: 12px 25px;
+      border-radius: 5px;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .contact a.button:hover {
+      background-color: var(--couleur-secondaire);
+      color: white;
+    }
+
     /* ==== Footer ==== */
     footer {
       text-align: center;
@@ -100,6 +162,7 @@
       .hero p { font-size: 1rem; }
       header { flex-direction: column; gap: 10px; }
       nav ul { flex-direction: column; gap: 10px; }
+      .services, .expertise { flex-direction: column; align-items: center; }
     }
   </style>
 </head>
@@ -112,16 +175,62 @@
       <ul>
         <li><a href="demande-de-pret.html">Demande de prêt</a></li>
         <li><a href="expertise.html">Expertise</a></li>
+        <li><a href="services.html">Nos services</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
   </header>
 
-  <!-- SECTION PRINCIPALE -->
+  <!-- HERO -->
   <section class="hero">
     <h1>Bienvenue sur Votre Site</h1>
     <p>Nous vous accompagnons dans vos projets financiers avec professionnalisme et transparence.</p>
     <a href="demande-de-pret.html" class="button">Faire une demande de prêt</a>
+  </section>
+
+  <!-- NOS SERVICES -->
+  <section>
+    <h2>Nos Services</h2>
+    <div class="services">
+      <div class="card">
+        <h3>Service 1</h3>
+        <p>Description du service 1.</p>
+      </div>
+      <div class="card">
+        <h3>Service 2</h3>
+        <p>Description du service 2.</p>
+      </div>
+      <div class="card">
+        <h3>Service 3</h3>
+        <p>Description du service 3.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERTISE -->
+  <section>
+    <h2>Notre Expertise</h2>
+    <div class="expertise">
+      <div class="card">
+        <h3>Expertise 1</h3>
+        <p>Présentation de l’expertise 1.</p>
+      </div>
+      <div class="card">
+        <h3>Expertise 2</h3>
+        <p>Présentation de l’expertise 2.</p>
+      </div>
+      <div class="card">
+        <h3>Expertise 3</h3>
+        <p>Présentation de l’expertise 3.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact">
+    <h2>Contactez-nous</h2>
+    <p>Vous pouvez nous envoyer un message ou consulter nos témoignages clients.</p>
+    <a href="contact.html" class="button">Nous contacter</a>
   </section>
 
   <!-- FOOTER -->
