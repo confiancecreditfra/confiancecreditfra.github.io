@@ -1,34 +1,51 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Confiance Crédit - Merci</title>
-  <link rel="stylesheet" href="css/styles.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Confiance Crédit - Merci</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <img src="images/logo.png" alt="Logo Confiance Crédit" class="logo">
-    <nav>
-      <a href="index.html">Accueil</a>
-      <a href="services.html">Services</a>
-      <a href="expertise.html">Expertise</a>
-      <a href="form.html">Demande de prêt</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-  </header>
 
-  <main>
-    <section>
-      <h1>Merci pour votre demande !</h1>
-      <p>Votre dossier sera traité afin de vérifier votre éligibilité à la demande de prêt.</p>
-      <p>Vous recevrez une réponse dans un délai de <strong>24 heures</strong>.</p>
-      <a href="index.html"><button>Retour à l’accueil</button></a>
-    </section>
-  </main>
+<header>
+  <img src="images/logo.png" alt="Logo Confiance Crédit" class="logo">
+  <nav>
+    <a href="index.html">Accueil</a>
+    <a href="services.html">Services</a>
+    <a href="expertise.html">Expertise</a>
+    <a href="forms.html">Demande de prêt</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
 
-  <footer>
-    &copy; 2019 - 2025 Confiance Crédit | Paris, France | Email : confiancecredit.fr@gmail.com
-  </footer>
+<section class="hero">
+  <h1>Merci pour votre demande !</h1>
+  <p>Nous avons bien reçu vos informations. Notre équipe vous contactera dans les plus brefs délais.</p>
+  <a href="index.html" class="button-hero">Retour à l’accueil</a>
+</section>
+
+<footer>
+  &copy; 2025 Confiance Crédit | Paris, France | Email : confiancecredit.fr@gmail.com
+</footer>
+
+<style>
+/* Logo et header */
+.logo {height:90px; display:block; margin:20px auto;}
+nav {text-align:center; margin-bottom:20px;}
+nav a {margin:0 15px; text-decoration:none; font-weight:bold; color:#2C3E50; transition:color 0.3s;}
+nav a:hover {color:#18BC9C;}
+
+/* Hero */
+.hero {text-align:center; padding:80px 20px; background:linear-gradient(to right, #2C3E50, #18BC9C); color:white;}
+.hero h1 {font-size:2.5rem; margin-bottom:20px;}
+.hero p {font-size:1.2rem; margin-bottom:30px;}
+.button-hero {display:inline-block; padding:15px 30px; background-color:#18BC9C; color:white; text-decoration:none; font-weight:bold; border-radius:8px; transition: background-color 0.3s;}
+.button-hero:hover {background-color:#2C3E50;}
+
+/* Footer */
+footer {text-align:center; padding:20px; background-color:#2C3E50; color:white; margin-top:40px;}
+</style>
+
 </body>
 </html>
