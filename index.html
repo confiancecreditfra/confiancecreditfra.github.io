@@ -3,27 +3,75 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Accueil - Votre Site Professionnel</title>
+  <title>Accueil - Confiance Crédit</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- HEADER avec seulement le logo -->
+  <!-- HEADER avec logo seulement -->
   <header>
-    <img src="images/logo.png" alt="Logo">
+    <img src="images/logo.png" alt="Logo Confiance Crédit" class="logo">
   </header>
 
   <!-- HERO -->
   <section class="hero">
-    <h1>Bienvenue sur Votre Site</h1>
+    <h1>Bienvenue sur Confiance Crédit</h1>
     <p>Nous vous accompagnons dans vos projets financiers avec professionnalisme et transparence.</p>
-    <!-- Bouton redirige vers la page secondaire avec tous les menus -->
-    <a href="demande-de-pret.html" class="button">Faire une demande de prêt</a>
+    <a href="menu-principal.html" class="button">Faire une demande de prêt</a>
   </section>
 
   <footer>
-    &copy; 2025 Votre Entreprise. Tous droits réservés.
+    &copy; 2025 Confiance Crédit | Paris, France | Email : confiancecredit.fr@gmail.com
   </footer>
+
+  <style>
+    /* Taille du logo ajustée à 90px */
+    .logo {
+      height: 90px;
+      display: block;
+      margin: 0 auto;
+    }
+
+    /* Section Hero avec couleurs professionnelles */
+    .hero {
+      text-align: center;
+      padding: 80px 20px;
+      background: linear-gradient(to right, #2C3E50, #18BC9C);
+      color: white;
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+    }
+
+    .hero .button {
+      background-color: white;
+      color: #2C3E50;
+      padding: 15px 30px;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .hero .button:hover {
+      background-color: #18BC9C;
+      color: white;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #2C3E50;
+      color: white;
+    }
+  </style>
 
 </body>
 </html>
