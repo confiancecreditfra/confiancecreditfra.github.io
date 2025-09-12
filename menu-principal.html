@@ -8,7 +8,7 @@
 </head>
 <body>
 
-  <!-- HEADER avec tous les menus principaux -->
+  <!-- HEADER avec logo et menus principaux -->
   <header>
     <img src="images/logo.png" alt="Logo Confiance Crédit" class="logo">
     <nav>
@@ -20,7 +20,7 @@
     </nav>
   </header>
 
-  <!-- SECTION D'ACCUEIL / PRESENTATION -->
+  <!-- SECTION HERO -->
   <section class="hero">
     <h1>Bienvenue sur votre espace Confiance Crédit</h1>
     <p>Accédez rapidement à tous nos services et à vos demandes de prêt.</p>
@@ -28,38 +28,34 @@
 
   <!-- SECTION DES SERVICES -->
   <section>
-    <h2>Services</h2>
+    <h2>Nos Services</h2>
     <div class="services">
       <div class="card">
-        <h3>Service 1</h3>
-        <p>Description du service 1.</p>
+        <h3>Prêt personnel</h3>
+        <p>Obtenez un prêt adapté à vos besoins personnels avec un taux avantageux.</p>
       </div>
       <div class="card">
-        <h3>Service 2</h3>
-        <p>Description du service 2.</p>
+        <h3>Prêt immobilier</h3>
+        <p>Financement pour l’achat de votre logement avec des conditions flexibles.</p>
       </div>
       <div class="card">
-        <h3>Service 3</h3>
-        <p>Description du service 3.</p>
+        <h3>Prêt professionnel</h3>
+        <p>Des solutions de financement pour développer ou créer votre activité professionnelle.</p>
+      </div>
+      <div class="card">
+        <h3>Prêt pour l'achat de véhicule</h3>
+        <p>Accédez rapidement à un prêt pour l’achat de votre voiture.</p>
       </div>
     </div>
   </section>
 
   <!-- SECTION EXPERTISE -->
   <section>
-    <h2>Expertise</h2>
+    <h2>Notre Expertise</h2>
     <div class="expertise">
       <div class="card">
-        <h3>Expertise 1</h3>
-        <p>Présentation de l’expertise 1.</p>
-      </div>
-      <div class="card">
-        <h3>Expertise 2</h3>
-        <p>Présentation de l’expertise 2.</p>
-      </div>
-      <div class="card">
-        <h3>Expertise 3</h3>
-        <p>Présentation de l’expertise 3.</p>
+        <h3>Expertise en prêts</h3>
+        <p>Nous sommes experts dans tous les domaines de prêt, offrant un accompagnement personnalisé et fiable.</p>
       </div>
     </div>
   </section>
@@ -82,6 +78,109 @@
   <footer>
     &copy; 2025 Confiance Crédit | Paris, France | Email : confiancecredit.fr@gmail.com
   </footer>
+
+  <style>
+    /* Logo réduit à 90px */
+    .logo {
+      height: 90px;
+      display: block;
+      margin: 0 auto;
+    }
+
+    /* Section Hero avec les mêmes couleurs que la page d’accueil */
+    .hero {
+      text-align: center;
+      padding: 80px 20px;
+      background: linear-gradient(to right, #2C3E50, #18BC9C);
+      color: white;
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+    }
+
+    .hero .button {
+      background-color: white;
+      color: #2C3E50;
+      padding: 15px 30px;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .hero .button:hover {
+      background-color: #18BC9C;
+      color: white;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #2C3E50;
+      color: white;
+    }
+
+    /* Cards */
+    .services, .expertise {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 30px;
+      padding: 40px 20px;
+    }
+
+    .card {
+      background-color: white;
+      padding: 20px;
+      border-radius: 10px;
+      width: 250px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+      text-align: center;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card h3 {
+      color: #2C3E50;
+    }
+
+    .card p {
+      font-size: 0.95rem;
+    }
+
+    /* Section Contact */
+    .contact {
+      background-color: #18BC9C;
+      color: white;
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .contact .button {
+      background-color: white;
+      color: #18BC9C;
+      padding: 12px 25px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .contact .button:hover {
+      background-color: #2C3E50;
+      color: white;
+    }
+  </style>
 
 </body>
 </html>
