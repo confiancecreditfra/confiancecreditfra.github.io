@@ -1,21 +1,23 @@
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Confiance Crédit - Demande de prêt</title>
-  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="style.css"> <!-- CSS commun pour tout le site -->
+  
+  <!-- EmailJS -->
   <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
   <script>
     (function(){
-      emailjs.init("c8ZN5oyhh7vUaeXzd"); // Ton public key
+      emailjs.init("c8ZN5oyhh7vUaeXzd"); // Ta clé publique EmailJS
     })();
+
     function sendEmail(event) {
       event.preventDefault();
       emailjs.sendForm("service_8ukh7wp","template_0axeamd", event.target)
       .then(() => {
-        window.location.href = "thank-you.html";
+        window.location.href = "thank-you.html"; // page de remerciement
       }, (error) => {
         alert("Erreur lors de l’envoi : " + JSON.stringify(error));
       });
@@ -23,17 +25,21 @@
   </script>
 </head>
 <body>
+
+  <!-- HEADER -->
   <header>
     <img src="images/logo.png" alt="Logo Confiance Crédit" class="logo">
     <nav>
       <a href="index.html">Accueil</a>
       <a href="services.html">Services</a>
       <a href="expertise.html">Expertise</a>
-      <a href="form.html" class="active">Demande de prêt</a>
+      <a href="demande-de-pret.html" class="active">Demande de prêt</a>
+      <a href="simulateur.html">Simulateur de prêt</a>
       <a href="contact.html">Contact</a>
     </nav>
   </header>
 
+  <!-- MAIN FORMULAIRE -->
   <main>
     <section>
       <h1>Formulaire de Demande de Prêt</h1>
@@ -52,13 +58,15 @@
         <label>IBAN : <input type="text" name="iban"></label>
         <label>Nom de la banque : <input type="text" name="banque"></label>
         <label>Propriétaire du compte : <input type="text" name="proprietaire"></label>
-        <button type="submit">Soumettre</button>
+        <button type="submit" class="button">Soumettre</button>
       </form>
     </section>
   </main>
 
+  <!-- FOOTER -->
   <footer>
-    &copy; 2019 - 2025 Confiance Crédit | Paris, France | Email : confiancecredit.fr@gmail.com
+    &copy; 2025 Confiance Crédit | Paris, France | Email : confiancecredit.fr@gmail.com
   </footer>
+
 </body>
 </html>
