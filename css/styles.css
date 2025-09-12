@@ -1,129 +1,144 @@
+/* ==== Couleurs et typographie ==== */
+:root {
+  --couleur-primaire: #2C3E50; /* bleu foncé */
+  --couleur-secondaire: #18BC9C; /* vert clair */
+  --couleur-fond: #F7F9FA;
+  --couleur-texte: #333;
+}
 
-  /* Reset */
-body, h1, h2, p {
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--couleur-fond);
+  color: var(--couleur-texte);
+}
+
+/* ==== Header / Navigation ==== */
+header {
+  background-color: var(--couleur-primaire);
+  color: white;
+  padding: 15px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+header img {
+  height: 50px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
   margin: 0;
   padding: 0;
 }
 
-/* Fond général bleu clair en dégradé */
-body {
-  font-family: Arial, sans-serif;
-  background: linear-gradient(135deg, #0d47a1, #2196f3);
-  color: #333;
-  line-height: 1.8;
-  margin: 0;
-  font-size: 18px; /* texte légèrement plus grand */
-}
-
-/* Header */
-header {
-  background: #0d47a1;
-  color: white;
-  padding: 20px;
-  text-align: center;
-}
-
-header .logo {
-  max-height: 80px;
-}
-
-nav {
-  margin-top: 10px;
-}
-
-nav a {
+nav ul li a {
   color: white;
   text-decoration: none;
-  margin: 0 15px;
   font-weight: bold;
   transition: color 0.3s;
-  font-size: 18px;
 }
 
-nav a:hover,
-nav a.active {
-  color: #ffeb3b; /* jaune vif */
+nav ul li a:hover {
+  color: var(--couleur-secondaire);
 }
 
-/* Contenu principal */
-main {
-  padding: 40px;
+/* ==== Hero ==== */
+.hero {
   text-align: center;
-}
-
-section, form {
-  background: white;
-  padding: 30px;
-  margin: 20px auto;
-  border-radius: 12px;
-  max-width: 900px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-}
-
-/* Titres */
-h1 {
-  font-size: 32px;
-  color: #0d47a1;
-  margin-bottom: 20px;
-  border-bottom: 4px solid #ffeb3b;
-  display: inline-block;
-  padding-bottom: 6px;
-}
-
-h2 {
-  font-size: 26px;
-  color: #0d47a1;
-  margin-bottom: 15px;
-  border-bottom: 3px solid #ffeb3b;
-  display: inline-block;
-  padding-bottom: 4px;
-}
-
-/* Formulaire */
-form label {
-  display: block;
-  margin-bottom: 15px;
-  font-weight: bold;
-  color: #333;
-  font-size: 18px;
-}
-
-form input, form textarea, form button {
-  width: 100%;
-  padding: 12px;
-  margin-top: 6px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  font-size: 16px;
-}
-
-form input, form textarea {
-  background: #f9f9f9;
-  color: #333;
-}
-
-form button {
-  background: #ffeb3b;
-  color: #0d47a1;
-  cursor: pointer;
-  font-weight: bold;
-  border: none;
-  margin-top: 20px;
-  font-size: 18px;
-  transition: background 0.3s;
-}
-
-form button:hover {
-  background: #fdd835;
-}
-
-/* Footer */
-footer {
-  background: #0d47a1;
+  padding: 80px 20px;
+  background: linear-gradient(to right, var(--couleur-primaire), var(--couleur-secondaire));
   color: white;
-  padding: 20px;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+a.button {
+  background-color: white;
+  color: var(--couleur-primaire);
+  padding: 12px 25px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+a.button:hover {
+  background-color: var(--couleur-secondaire);
+  color: white;
+}
+
+/* ==== Sections ==== */
+section {
+  padding: 60px 20px;
   text-align: center;
-  margin-top: 50px;
-  border-top: 4px solid #ffeb3b;
-  font-size: 16px;
+}
+
+.services, .expertise {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.card {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 250px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card h3 {
+  margin-top: 0;
+  color: var(--couleur-primaire);
+}
+
+.card p {
+  font-size: 0.95rem;
+}
+
+/* ==== Contact ==== */
+.contact {
+  background-color: var(--couleur-primaire);
+  color: white;
+  padding: 60px 20px;
+}
+
+.contact h2 {
+  margin-top: 0;
+}
+
+/* ==== Footer ==== */
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: var(--couleur-primaire);
+  color: white;
+}
+
+/* ==== Responsive ==== */
+@media(max-width: 768px) {
+  .hero h1 { font-size: 2rem; }
+  .hero p { font-size: 1rem; }
+  header { flex-direction: column; gap: 10px; }
+  nav ul { flex-direction: column; gap: 10px; }
+  .services, .expertise { flex-direction: column; align-items: center; }
 }
