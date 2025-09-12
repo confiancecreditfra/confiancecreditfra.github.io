@@ -21,13 +21,12 @@
 
 <section class="hero">
   <h1>Simulateur de prêt</h1>
-  <p>Calculez rapidement vos mensualités selon le montant, le taux et la durée de votre prêt.</p>
+  <p>Calculez rapidement vos mensualités pour un prêt avec un taux fixe de 2% par an.</p>
 </section>
 
 <section class="simulateur-section">
   <form class="simulateur-form">
     <label>Montant du prêt (€) : <input type="number" name="montant" required></label>
-    <label>Taux d'intérêt (%) : <input type="number" name="taux" required></label>
     <label>Durée (années) : <input type="number" name="duree" required></label>
     <button type="button" onclick="calculerMensualite()">Calculer</button>
   </form>
@@ -41,9 +40,9 @@
 <script>
 function calculerMensualite() {
   const montant = parseFloat(document.querySelector('[name="montant"]').value);
-  const taux = parseFloat(document.querySelector('[name="taux"]').value)/100/12;
-  const duree = parseFloat(document.querySelector('[name="duree"]').value)*12;
-  const mensualite = montant*(taux*Math.pow(1+taux,duree))/(Math.pow(1+taux,duree)-1);
+  const duree = parseFloat(document.querySelector('[name="duree"]').value) * 12;
+  const taux = 0.02 / 12; // Taux fixe 2% par an converti en mensuel
+  const mensualite = montant * (taux * Math.pow(1 + taux, duree)) / (Math.pow(1 + taux, duree) - 1);
   document.getElementById('resultat').innerText = "Mensualité estimée : " + mensualite.toFixed(2) + " €";
 }
 </script>
@@ -74,4 +73,3 @@ footer {text-align:center; padding:20px; background-color:#2C3E50; color:white; 
 
 </body>
 </html>
-   
