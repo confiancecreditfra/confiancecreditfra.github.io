@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simulateur de prêt - Confiance Crédit</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #1e3a8a, #3b82f6);
+      color: white;
+      text-align: center;
+      padding: 30px;
+    }
+    .container {
+      background: white;
+      color: #1e3a8a;
+      border-radius: 15px;
+      padding: 30px;
+      max-width: 650px;
+      margin: auto;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    }
+    h1 {
+      color: #1e3a8a;
+      margin-bottom: 20px;
+    }
+    input {
+      padding: 12px;
+      margin: 10px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      width: 80%;
+      font-size: 16px;
+    }
+    button {
+      background: #facc15;
+      color: #1e3a8a;
+      border: none;
+      padding: 12px 25px;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 15px;
+      transition: 0.3s;
+    }
+    button:hover {
+      background: #eab308;
+    }
+    .results {
+      margin-top: 25px;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    .card {
+      background: #1e3a8a;
+      color: white;
+      padding: 20px;
+      border-radius: 12px;
+      font-size: 18px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      transition: transform 0.3s;
+    }
+    .card:hover {
+      transform: scale(1.05);
+    }
+    .card span {
+      display: block;
+      font-size: 22px;
+      font-weight: bold;
+      color: #facc15;
+      margin-top: 8px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Simulateur de prêt</h1>
+    <p>Calculez vos mensualités avec un taux fixe de <b>2% annuel</b>.</p>
+
+    <input type="number" id="montant" placeholder="Montant du prêt (€)" />
+    <input type="number" id="annees" placeholder="Durée (années)" />
+    <br>
+    <button onclick="calculer()">Simuler</button>
+
+    <div class="results" id="resultats" style="display:none;">
+      <div class="card">
+        Mensualité
+        <span id="mensualite"></span> €
+      </div>
+      <div class="card">
+        Total remboursé
+        <span id="total"></span> €
+      </div>
+      <div class="card">
+        Coût du crédit
+        <span id="interets"></span> €
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function calculer() {
+      let montant = parseFloat(document.getElementById("montant").value);
+      let annees = parseInt(document.getElementById("annees").value);
+      let tauxAnnuel = 0.02; // 2% annuel
+      let nbMois = annees * 12;
+      let tauxMensuel = tauxAnnuel / 12;
+
+      if (isNaN(montant) || isNaN(annees) || montant <= 0 || annees <= 0) {
+        alert("Veuillez entrer un montant et une durée valides.");
+        return;
+      }
+
+      // Formule d'annuité
+      let mensualite = (montant * tauxMensuel) / (1 - Math.pow(1 + tauxMensuel, -nbMois));
+      let total = mensualite * nbMois;
+      let interets = total - montant;
+
+      document.getElementById("mensualite").innerText = mensualite.toFixed(2);
+      document.getElementById("total").innerText = total.toFixed(2);
+      document.getElementById("interets").innerText = interets.toFixed(2);
+
+      document.getElementById("resultats").style.display = "flex";
+    }
+  </script>
+</body>
+</html>
