@@ -30,7 +30,12 @@
     <label>Durée (années) : <input type="number" name="duree" required></label>
     <button type="button" onclick="calculerMensualite()">Calculer</button>
   </form>
-  <p id="resultat" class="resultat"></p>
+  <div class="resultats">
+    <p id="mensualite" class="resultat"></p>
+    <p id="total" class="resultat"></p>
+    <p id="cout" class="resultat"></p>
+    <p id="note" class="note">NB : Le paiement des mensualités commence 3 mois après la réception du prêt.</p>
+  </div>
 </section>
 
 <footer>
@@ -40,10 +45,18 @@
 <script>
 function calculerMensualite() {
   const montant = parseFloat(document.querySelector('[name="montant"]').value);
-  const duree = parseFloat(document.querySelector('[name="duree"]').value) * 12;
-  const taux = 0.02 / 12; // Taux fixe 2% par an converti en mensuel
+  const duree = parseFloat(document.querySelector('[name="duree"]').value) * 12; // durée en mois
+  const taux = 0.02 / 12; // taux fixe 2% annuel / 12
+
+  // Calcul mensualité
   const mensualite = montant * (taux * Math.pow(1 + taux, duree)) / (Math.pow(1 + taux, duree) - 1);
-  document.getElementById('resultat').innerText = "Mensualité estimée : " + mensualite.toFixed(2) + " €";
+  const totalRembourse = mensualite * duree;
+  const coutCredit = totalRembourse - montant;
+
+  // Affichage
+  document.getElementById('mensualite').innerText = "Mensualité estimée : " + mensualite.toFixed(2) + " €";
+  document.getElementById('total').innerText = "Total à rembourser : " + totalRembourse.toFixed(2) + " €";
+  document.getElementById('cout').innerText = "Coût total du crédit : " + coutCredit.toFixed(2) + " €";
 }
 </script>
 
@@ -65,7 +78,9 @@ nav a:hover {color:#18BC9C;}
 .simulateur-form input {padding:10px; border-radius:5px; border:1px solid #ccc; width:100%;}
 .simulateur-form button {padding:15px; border:none; border-radius:5px; background-color:#18BC9C; color:white; font-weight:bold; cursor:pointer; font-size:1rem;}
 .simulateur-form button:hover {background-color:#2C3E50;}
-.resultat {margin-top:20px; font-weight:bold; font-size:1.1rem; color:#2C3E50;}
+.resultats {margin-top:20px; text-align:left;}
+.resultat {font-weight:bold; font-size:1.1rem; color:#2C3E50; margin-bottom:5px;}
+.note {font-style:italic; color:#2C3E50; margin-top:15px;}
 
 /* Footer */
 footer {text-align:center; padding:20px; background-color:#2C3E50; color:white; margin-top:40px;}
